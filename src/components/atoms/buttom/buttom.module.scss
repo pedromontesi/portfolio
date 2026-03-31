@@ -1,0 +1,17 @@
+.button {
+    padding: 4px 16px;
+    border-radius: 32px;
+    border: none;
+    cursor: pointer;
+}
+
+.buttonCurriculum {
+    @extend .button;
+    background: #C4C4C4;
+    color: #000;
+    font: {
+        size: 12px;
+        weight: bold;
+        family: sans-serif;
+    }
+}

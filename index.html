@@ -1,85 +1,13 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
-    <link rel="preload" href="./style.css" as="style">
-    <link rel="stylesheet" href="style.css" />
-    <title>João Monteiro - Desenvolvedor Front-end & UI/UX Design</title>
-    <meta
-      name="description"
-      content="Design de sites e desenvolvimento Front-end"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <title>João Monteiro </title>
   </head>
-
   <body>
-    <header class="header">
-      <a href="./index.html"
-        ><img src="/img/header-logo.svg" alt="Logo Monteiro"
-      /></a>
-      <nav>
-        <ul class="header-menu">
-          <li><a href="./qualification.html">Formação</a></li>
-          <li><a href="./project.html">Projetos /</a></li>
-          <li><a href="/contact.html">Contato</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main class="self">
-      <div class="self-container">
-        <img
-          data-anime="800"
-          class="profile-photo fadeInDown"
-          src="/img/profile-photo.png"
-          alt="foto de perfil"
-          width="360"
-          height="360"
-        />
-        <div class="self-text">
-          <h1 data-anime="200" class="font-1-xxl color-1 fadeInDown">
-            Desenvolvedor<br>Front-end &<br>UX/UI Design
-          </h1>
-          <p data-anime="400" class="font-2-l color-2 fadeInDown">
-            Apaixonado por Front-end, procuro fazer projetos usando
-            <strong>HTML</strong>, <strong>CSS</strong> e
-            <strong>Javascript</strong>. Além disso, já fiz projetos dos quais
-            foquei fortemente em <strong>UX</strong> e
-            <strong>UI Design</strong>.
-          </p>
-          <ul class="self-link fadeInDown" data-anime="600">
-            <li>
-              <a href="https://github.com/pedromontesi/" target="_blank"
-                ><img src="/img/github.svg" alt="GitHub"
-              /></a>
-            </li>
-            <li>
-              <a href="mailto:joaopedromonteiro090@gmail.com" target="_blank"
-                ><img src="/img/mail.svg" alt="Email"
-              /></a>
-            </li>
-            <li>
-              <a
-                href="https://www.linkedin.com/in/jo%C3%A3o-pedro-monteiro-da-silva-347120299/"
-                target="_blank"
-                ><img src="/img/linkedin.svg" alt="LinkedIn"
-              /></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </main>
-    <footer class="footer-copy color-4">
-      <p>João Monteiro © Alguns diretos reservados.</p>
-    </footer>
-
-    <script src="./plugins/simple-anime.js"></script>;
-    <script src="/script.js"></script>
-
+    <div id="root"></div>
+    <script type="module" src="./main.tsx"></script>
   </body>
 </html>
