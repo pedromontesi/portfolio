@@ -23,7 +23,6 @@ export function Footer ({ item1, item2, item3 }: FooterProps) {
         <FallingText
             text={`Feito com <3 por mim :D`}
             highlightWords={["Feito", "Bits", "<3", ":D"]}
-            highlightClass="highlighted"
             trigger="scroll"
             backgroundColor="transparent"
             wireframes={false}
