@@ -108,6 +108,7 @@ export function Header({ logo, item1, item2, item3, item4 }: HeaderProps) {
 </ul>
 
 <HoldButton
+  doneLabel=""
   backgroundColor="#27272a"
   fillColor="var(--gradient-rainbow-pastel)"
   textColor="#f5f5f5"
@@ -149,7 +150,7 @@ export function Header({ logo, item1, item2, item3, item4 }: HeaderProps) {
 />
 
 
-<div  id="about" className="mt-16 flex justify-start items-center text-4xl p-8">
+<div  id="about" className="mt-16 flex justify-start items-center text-6xl p-8">
   <DecryptedText
     text="João Monteiro"
     animateOn="view"
