@@ -496,7 +496,7 @@ const BentoCardGrid: React.FC<{
   gridRef?: React.RefObject<HTMLDivElement | null>;
 }> = ({ children, gridRef }) => (
   <div
-    className="bento-section grid gap-2 p-3 w-full max-w-6xl mx-auto select-none relative"
+    className="bento-section grid gap-2 full max-w-6xl  select-none relative"
     style={{ fontSize: 'clamp(1rem, 0.9rem + 0.5vw, 1.5rem)' }}
     ref={gridRef}
   >
@@ -557,7 +557,6 @@ const MagicBento: React.FC<BentoProps> = ({
           
           .card-responsive {
             grid-template-columns: 1fr;
-            width: 90%;
             margin: 0 auto;
             padding: 0.5rem;
           }
@@ -571,6 +570,7 @@ const MagicBento: React.FC<BentoProps> = ({
           @media (min-width: 1024px) {
             .card-responsive {
               grid-template-columns: repeat(4, 1fr);
+              padding: 32px
             }
             
             .card-responsive .card:nth-child(3) {

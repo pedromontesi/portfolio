@@ -1,0 +1,6 @@
+.nav-container {
+    @media (max-width: 612px) {
+        justify-content: center;
+        gap: 18px
+    }
+}

@@ -5,6 +5,7 @@ import HoldButton from './HoldButton';
 import LogoLoop from './LogoLoop';
 import MagicBento from './MagicBento';
 import AnimatedList from './AnimatedList';
+import styles from './style.module.scss';
 
 import {
   SiReact,
@@ -52,6 +53,7 @@ const projects = [
     label: 'Projeto pessoal',
     title: 'Greenville',
     description: 'Site de imobiliária feito com React, TypeScript e SCSS Modules.',
+    href: 'https://greenville-sage.vercel.app/'
   },
   {
     label: 'Projeto pessoal',
@@ -62,6 +64,7 @@ const projects = [
     label: 'Destaque',
     title: 'Watch Party',
     description: 'App para assistir em grupo em tempo real, com React 19, TypeScript, Vite, Socket.IO e WebRTC.',
+    href: 'https://watch-party-qks5.onrender.com/'
   },
   {
     label: 'GitHub',
@@ -69,6 +72,13 @@ const projects = [
     description: 'Veja o restante no meu GitHub.',
     href: 'https://github.com/pedromontesi',
   },
+   {
+    label: 'Destaque',
+    title: 'API de Pessoas',
+    description: 'API REST para CRUD de pessoas, desenvolvida em TypeScript + Express, com POO e alguns design patterns, e persistência em PostgreSQL via pg',
+    href: 'https://github.com/pedromontesi/person-api'
+  },
+  
 ].map((card, index) => ({
   ...card,
   color: '#0a0a0a',
@@ -80,23 +90,24 @@ type HeaderProps = {
   item1: string;
   item2: string;
   item3: string;
+  item4: string;
 };
 
 
-export function Header({ logo, item1, item2, item3 }: HeaderProps) {
+export function Header({ logo, item1, item2, item3, item4 }: HeaderProps) {
   return (
     <Container>
       
       <img src={logo} alt="" />
-      <div className="flex flex-wrap items-center justify-between p-8">
+      <div className={`${styles['nav-container']} flex flex-wrap items-center justify-between p-8`}>
       <ul className="flex flex-wrap gap-8">
-        <li className="text-neutral-100">{item1}</li>
-        <li className="text-neutral-100">{item2}</li>
-        <li className="text-neutral-100">{item3}</li>
-      </ul>
+        <li className="text-neutral-100"><a href="#about">{item1}</a></li>
+        <li className="text-neutral-100"><a href="#experience">{item2}</a></li>
+        <li className="text-neutral-100"><a href="#projects">{item3}</a></li>
+        <li className="text-neutral-100"><a href="#contact">{item4}</a></li>
+</ul>
 
 <HoldButton
-  doneLabel="baixado"
   backgroundColor="#27272a"
   fillColor="var(--gradient-rainbow-pastel)"
   textColor="#f5f5f5"
@@ -111,7 +122,14 @@ export function Header({ logo, item1, item2, item3 }: HeaderProps) {
   waveAmplitude={6}
   glow
   resetAfter={1200}
-  onHold={() => console.log('confirmed')}
+  onHold={() => {
+    const link = document.createElement('a');
+    link.href = '/curriculo.pdf';
+    link.download = 'curriculo.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}}
 >
   Segure para baixar meu currículo
 </HoldButton>
@@ -131,7 +149,7 @@ export function Header({ logo, item1, item2, item3 }: HeaderProps) {
 />
 
 
-<div className="mt-16 flex justify-start items-center text-4xl p-8">
+<div  id="about" className="mt-16 flex justify-start items-center text-4xl p-8">
   <DecryptedText
     text="João Monteiro"
     animateOn="view"
@@ -169,34 +187,15 @@ export function Header({ logo, item1, item2, item3 }: HeaderProps) {
   />
 </div>
 
-<div className="relative z-10 pb-16">
-  <h2 className="text-white text-4xl p-8 mt-16">
-    Meus <span className="text-rainbow-pastel font-bold">projetos em destaque</span>
-  </h2>
-  <MagicBento 
-  textAutoHide={true}
-  enableStars={false}
-  enableSpotlight={false}
-  enableBorderGlow={true}
-  enableTilt
-  cards={projects}
-  enableMagnetism={false}
-  clickEffect={false}
-  spotlightRadius={400}
-  particleCount={12}
-  glowColor="var(--color-rainbow-1-rgb)"
-  disableAnimations={false}
-/>
-</div>
 
-<div className="relative z-10 pb-16">
+<div id="experience" className="relative z-10 pb-16 mt-16">
   <h2 className="text-white text-4xl p-8">
     Minha <span className="text-rainbow-pastel font-bold">experiência</span>
   </h2>
 
   <div className="px-8">
     <div className="mb-4">
-      <h3 className="text-white text-2xl font-semibold">Desenvolvedor Full-Stack — Avanti (Penseavanti)</h3>
+      <h3 className="text-white text-2xl font-semibold">Desenvolvedor Full-Stack — Avanti Desenvolvimento de Sistemas LTDA</h3>
       <span className="text-neutral-400">2025 – 2026</span>
     </div>
 
@@ -218,6 +217,26 @@ export function Header({ logo, item1, item2, item3 }: HeaderProps) {
       ]}
     />
   </div>
+</div>
+
+<div id="projects" className="relative z-10 pb-16">
+  <h2 className="text-white text-4xl p-8 mt-16">
+    Meus <span className="text-rainbow-pastel font-bold">projetos em destaque</span>
+  </h2>
+  <MagicBento
+  textAutoHide={true}
+  enableStars={false}
+  enableSpotlight={false}
+  enableBorderGlow={true}
+  enableTilt
+  cards={projects}
+  enableMagnetism={false}
+  clickEffect={false}
+  spotlightRadius={400}
+  particleCount={12}
+  glowColor="var(--color-rainbow-1-rgb)"
+  disableAnimations={false}
+/>
 </div>
     </Container>
   );

@@ -9,16 +9,20 @@ type FooterProps = {
     item1: String;
     item2: String;
     item3: String;
+    item4: String;
 }
 
 
-export function Footer ({ item1, item2, item3 }: FooterProps) {
+export function Footer ({ item1, item2, item3, item4 }: FooterProps) {
     return (
         <Container>
         <ul className="flex flex-col gap-2">
             <li>{item1}</li>
             <li>{item2}</li>
             <li>{item3}</li>
+            <li>{item4}</li>
+            
+                
         </ul>
         <div className="mt-8 text-rainbow-pastel">
             <HiArrowSmUp />
