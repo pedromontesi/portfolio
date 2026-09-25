@@ -104,7 +104,9 @@ export function Header({ logo, item1, item2, item3, item4 }: HeaderProps) {
         <li className="text-neutral-100"><a href="#about">{item1}</a></li>
         <li className="text-neutral-100"><a href="#experience">{item2}</a></li>
         <li className="text-neutral-100"><a href="#projects">{item3}</a></li>
-        <li className="text-neutral-100"><a href="#contact">{item4}</a></li>
+        <li className="text-neutral-100"><a href="https://wa.me/+5521967508895" target="_blank" rel="noopener noreferrer">
+          {item4}
+        </a></li>
 </ul>
 
 <HoldButton
