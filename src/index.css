@@ -2,4 +2,50 @@
 
 :root {
     background-color: #000;
+
+    /* Cor azul original do site */
+    --color-primary: #2092c7;
+    --color-primary-rgb: 32, 146, 199;
+
+    /* Rainbow pastel: hue de --color-primary (~199°) rotacionado de 60 em 60,
+       com saturação/luminosidade reduzidas para o tom pastel */
+    --color-rainbow-1: #bee3f4; /* azul   (hue base) */
+    --color-rainbow-2: #cfbef4; /* roxo   (+60°) */
+    --color-rainbow-3: #f4bee3; /* rosa   (+120°) */
+    --color-rainbow-4: #f4cfbe; /* pêssego (+180°) */
+    --color-rainbow-5: #e3f4be; /* verde-limão (+240°) */
+    --color-rainbow-6: #bef4cf; /* menta  (+300°) */
+
+    --color-rainbow-1-rgb: 190, 227, 244;
+    --color-rainbow-2-rgb: 207, 190, 244;
+    --color-rainbow-3-rgb: 244, 190, 227;
+    --color-rainbow-4-rgb: 244, 207, 190;
+    --color-rainbow-5-rgb: 227, 244, 190;
+    --color-rainbow-6-rgb: 190, 244, 207;
+
+    --gradient-rainbow-pastel: linear-gradient(
+        90deg,
+        var(--color-rainbow-1),
+        var(--color-rainbow-2),
+        var(--color-rainbow-3),
+        var(--color-rainbow-4),
+        var(--color-rainbow-5),
+        var(--color-rainbow-6),
+        var(--color-rainbow-1)
+    );
+}
+
+.text-rainbow-pastel {
+    background-image: var(--gradient-rainbow-pastel);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow-shift 8s linear infinite;
+}
+
+@keyframes rainbow-shift {
+    to {
+        background-position: 200% center;
+    }
 }

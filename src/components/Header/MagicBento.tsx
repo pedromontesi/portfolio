@@ -9,6 +9,8 @@ export interface BentoCardProps {
   href?: string;
   textAutoHide?: boolean;
   disableAnimations?: boolean;
+  /** RGB "R, G, B" (ou var(--algo-rgb)) que sobrescreve o glow global só deste card */
+  glowColor?: string;
 }
 
 export interface BentoProps {
@@ -593,8 +595,8 @@ const MagicBento: React.FC<BentoProps> = ({
             inset: 0;
             padding: 6px;
             background: radial-gradient(var(--glow-radius) circle at var(--glow-x) var(--glow-y),
-                rgba(${glowColor}, calc(var(--glow-intensity) * 0.8)) 0%,
-                rgba(${glowColor}, calc(var(--glow-intensity) * 0.4)) 30%,
+                rgba(var(--glow-color), calc(var(--glow-intensity) * 0.8)) 0%,
+                rgba(var(--glow-color), calc(var(--glow-intensity) * 0.4)) 30%,
                 transparent 60%);
             border-radius: inherit;
             -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
@@ -612,7 +614,7 @@ const MagicBento: React.FC<BentoProps> = ({
           }
           
           .card--border-glow:hover {
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 30px rgba(${glowColor}, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 30px rgba(var(--glow-color), 0.2);
           }
           
           .particle::before {
@@ -699,7 +701,8 @@ const MagicBento: React.FC<BentoProps> = ({
               '--glow-x': '50%',
               '--glow-y': '50%',
               '--glow-intensity': '0',
-              '--glow-radius': '200px'
+              '--glow-radius': '200px',
+              '--glow-color': card.glowColor || glowColor
             } as React.CSSProperties;
 
             if (enableStars) {

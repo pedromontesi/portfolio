@@ -7,7 +7,7 @@ export function App() {
   return (
     <>
       <Header logo="logo" item1="Sobre" item2="Experiência" item3="Contato" />
-      <div className="text-white flex flex-col flex-wrap justify-start mr-8 ml-8 mb-8 bg-neutral-950 p-8 rounded-3xl">
+      <div className="text-white flex flex-col flex-wrap justify-start mr-8 ml-8 mb-8 bg-neutral-950 p-8 rounded-3xl mt-16">
         <Footer item1="Sobre" item2="Experiência" item3="Contato" />
       </div>
     </>
