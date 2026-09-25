@@ -1,12 +1,10 @@
-import './src//theme/custom-theme.scss'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { Home } from './src/pages/home'
-import { Header } from './src/components/molecules/header'
+import './src/index.css'
+import { App } from './App.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Header />
-    <Home />
+    <App />
   </StrictMode>
 )
