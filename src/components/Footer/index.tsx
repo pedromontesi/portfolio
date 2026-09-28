@@ -21,7 +21,6 @@ export function Footer ({ item1, item2, item3, item4 }: FooterProps) {
           {item4}
         </a></li>
       </ul>
-     tsx
     <div className="mt-8 flex items-center gap-1">
       <a href="#top" className="text-rainbow-pastel flex gap-1 items-center"><HiArrowSmUp color="#fff" />Voltar ao Topo</a>
     </div>
