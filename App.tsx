@@ -1,3 +1,4 @@
+import { Content } from "./src/components/Content";
 import { Footer } from "./src/components/Footer";
 import { Header } from "./src/components/Header/index";
 // import { Container } from "./src/components/Container";
@@ -6,7 +7,8 @@ import { Header } from "./src/components/Header/index";
 export function App() {
   return (
     <>
-      <Header logo="logo" item1="Sobre" item2="Experiência" item3="Projetos" item4="Contato" />
+      <Header item1="Sobre" item2="Experiência" item3="Projetos" item4="Contato" />
+      <Content />
       <div className="text-white flex flex-col flex-wrap justify-start mr-8 ml-8 mb-8 bg-neutral-950 p-8 rounded-3xl mt-16">
         <Footer item1="Sobre" item2="Experiência" item3="Projetos" item4="Contato" />
       </div>

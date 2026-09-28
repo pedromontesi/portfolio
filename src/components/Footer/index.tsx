@@ -1,6 +1,6 @@
 // import styles from '.style.module.scss';
 import { Container } from "../Container";
-import FallingText from './FallingText';
+import { FallingText } from '../react-bits';
 import { HiArrowSmUp } from "react-icons/hi";
 
 type FooterProps = {
@@ -21,10 +21,10 @@ export function Footer ({ item1, item2, item3, item4 }: FooterProps) {
           {item4}
         </a></li>
       </ul>
-      <div className="mt-8 text-rainbow-pastel">
-        <HiArrowSmUp />
-        <a href="#top">Voltar ao Topo</a>
-      </div>
+     tsx
+    <div className="mt-8 flex items-center gap-1">
+      <a href="#top" className="text-rainbow-pastel flex gap-1 items-center"><HiArrowSmUp color="#fff" />Voltar ao Topo</a>
+    </div>
       <FallingText
         text={`Feito com <3 por mim :D`}
         highlightWords={["Feito", "Bits", "<3", ":D"]}
